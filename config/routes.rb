@@ -1,8 +1,10 @@
 routes = lambda do
   namespace :admin do 
     resources :products do 
+       get :volume_prices, :on => :member
+
        resources :variants do
-        get :volume_prices, :on => :member
+         get :volume_prices, :on => :member
       end
     end
 

@@ -1,0 +1,11 @@
+<%= render 'spree/admin/shared/product_sub_menu' %>
+<%= render :partial => 'spree/admin/shared/product_tabs', :locals => {:current => "Volume Pricing"} %>
+
+<br>
+<b>Select variant to edit</b>
+<br>
+<br>
+
+<% @product.variants.each do |variant| %>
+  <%= link_to "#{@product.name} #{variant.option_values.map(&:name).join(" - ")}", volume_prices_admin_product_variant_path(@product, variant) %> <br>
+<% end %>
